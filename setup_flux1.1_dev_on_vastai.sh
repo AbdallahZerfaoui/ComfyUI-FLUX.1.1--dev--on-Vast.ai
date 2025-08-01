@@ -41,25 +41,25 @@ mkdir -p models/vae
 #    Replace the URLs below with the signed ones you received from
 #    Black-Forest-Labs or their Discord #download channel.
 # ------------------------------------------------------------------
-echo "===== 5. Download FLUX 1.1 dev weights (this may take 5-10 min) ====="
+echo "===== 5. Download FLUX 1.0 dev weights (this may take 5-10 min) ====="
 
 # 5-a) Main 23 GB checkpoint
 aria2c -x16 -s16 \
-  "https://blackforestlabs.storage.googleapis.com/flux1.1-dev/flux1.1-dev-fp8.safetensors" \
+  "https://huggingface.co/lllyasviel/flux1_dev/resolve/main/flux1-dev-fp8.safetensors" \
   -o models/unet/flux1.1-dev-fp8.safetensors
 
 # 5-b) CLIP text encoders
 aria2c -x16 -s16 \
-  "https://blackforestlabs.storage.googleapis.com/flux1.1-dev/clip_l.safetensors" \
+  "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/clip_l.safetensors" \
   -o models/clip/clip_l.safetensors
 
 aria2c -x16 -s16 \
-  "https://blackforestlabs.storage.googleapis.com/flux1.1-dev/t5xxl_fp8_e4m3fn.safetensors" \
+  "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors" \
   -o models/clip/t5xxl_fp8_e4m3fn.safetensors
 
 # 5-c) VAE (auto-encoder, same file as FLUX 1.0)
 aria2c -x16 -s16 \
-  "https://blackforestlabs.storage.googleapis.com/flux1.0/ae.safetensors" \
+  "https://huggingface.co/ffxvs/vae-flux/resolve/main/ae.safetensors" \
   -o models/vae/ae.safetensors
 
 echo "===== 6. Download example workflow (optional) ====="
@@ -74,10 +74,10 @@ python main.py --listen --port 8188
 # ------------------------------------------------------------------
 # 5-A. Download FLUX-1.1-dev-fp8 checkpoint (23 GB)
 # ------------------------------------------------------------------
-echo "===== 5-A. FLUX-1.1-dev-fp8 checkpoint ====="
-aria2c -x16 -s16 \
-  "https://blackforestlabs.storage.googleapis.com/flux1.1-dev/flux1.1-dev-fp8.safetensors" \
-  -o models/unet/flux1.1-dev-fp8.safetensors
+# echo "===== 5-A. FLUX-1.1-dev-fp8 checkpoint ====="
+# aria2c -x16 -s16 \
+#   "https://blackforestlabs.storage.googleapis.com/flux1.1-dev/flux1.1-dev-fp8.safetensors" \
+#   -o models/unet/flux1.1-dev-fp8.safetensors
 
 # ------------------------------------------------------------------
 # 5-B. Download Instagram-realism LoRAs (place in LoRA folder)
