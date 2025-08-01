@@ -70,3 +70,32 @@ wget -q https://gist.githubusercontent.com/your-gist/flux1.1-dev-workflow.json \
 echo "===== 7. Start ComfyUI ====="
 echo "Opening port 8188 on 0.0.0.0 (use SSH tunnel on your laptop)"
 python main.py --listen --port 8188
+
+# ------------------------------------------------------------------
+# 5-A. Download FLUX-1.1-dev-fp8 checkpoint (23 GB)
+# ------------------------------------------------------------------
+echo "===== 5-A. FLUX-1.1-dev-fp8 checkpoint ====="
+aria2c -x16 -s16 \
+  "https://blackforestlabs.storage.googleapis.com/flux1.1-dev/flux1.1-dev-fp8.safetensors" \
+  -o models/unet/flux1.1-dev-fp8.safetensors
+
+# ------------------------------------------------------------------
+# 5-B. Download Instagram-realism LoRAs (place in LoRA folder)
+# ------------------------------------------------------------------
+mkdir -p models/loras
+echo "===== 5-B. Instagram-realism LoRAs ====="
+
+# 1) Realistic Skin Texture LoRA
+aria2c -x4 \
+  "https://civitai.com/api/download/models/156885?type=Model&format=SafeTensor" \
+  -o models/loras/ins_real_skin.safetensors
+
+# 2) Fashion-Model Poses LoRA
+aria2c -x4 \
+  "https://civitai.com/api/download/models/148192?type=Model&format=SafeTensor" \
+  -o models/loras/ig_fashion_pose.safetensors
+
+# 3) Soft-Golden-Hour Lighting LoRA
+aria2c -x4 \
+  "https://civitai.com/api/download/models/142376?type=Model&format=SafeTensor" \
+  -o models/loras/golden_hour_light.safetensors
