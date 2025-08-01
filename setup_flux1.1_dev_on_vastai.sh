@@ -46,7 +46,7 @@ echo "===== 5. Download FLUX 1.0 dev weights (this may take 5-10 min) ====="
 # 5-a) Main 23 GB checkpoint
 aria2c -x16 -s16 \
   "https://huggingface.co/lllyasviel/flux1_dev/resolve/main/flux1-dev-fp8.safetensors" \
-  -o models/unet/flux1.1-dev-fp8.safetensors
+  -o models/unet/flux1-dev-fp8.safetensors
 
 # 5-b) CLIP text encoders
 aria2c -x16 -s16 \
@@ -85,17 +85,17 @@ python main.py --listen --port 8188
 mkdir -p models/loras
 echo "===== 5-B. Instagram-realism LoRAs ====="
 
-# 1) Realistic Skin Texture LoRA
-aria2c -x4 \
-  "https://civitai.com/api/download/models/156885?type=Model&format=SafeTensor" \
-  -o models/loras/ins_real_skin.safetensors
+# # 1) Realistic Skin Texture LoRA
+# aria2c -x4 \
+#   "https://civitai.com/api/download/models/156885?type=Model&format=SafeTensor" \
+#   -o models/loras/ins_real_skin.safetensors
 
-# 2) Fashion-Model Poses LoRA
-aria2c -x4 \
-  "https://civitai.com/api/download/models/148192?type=Model&format=SafeTensor" \
-  -o models/loras/ig_fashion_pose.safetensors
+# # 2) Fashion-Model Poses LoRA
+# aria2c -x4 \
+#   "https://civitai.com/api/download/models/148192?type=Model&format=SafeTensor" \
+#   -o models/loras/ig_fashion_pose.safetensors
 
-# 3) Soft-Golden-Hour Lighting LoRA
-aria2c -x4 \
-  "https://civitai.com/api/download/models/142376?type=Model&format=SafeTensor" \
-  -o models/loras/golden_hour_light.safetensors
+# # 3) Soft-Golden-Hour Lighting LoRA
+# aria2c -x4 \
+#   "https://civitai.com/api/download/models/142376?type=Model&format=SafeTensor" \
+#   -o models/loras/golden_hour_light.safetensors
