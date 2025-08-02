@@ -22,7 +22,7 @@ if [ -d ComfyUI ]; then
   rm -rf ComfyUI
 fi
 git clone https://github.com/comfyanonymous/ComfyUI.git /root/ComfyUI
-cd ComfyUI
+cd /root/ComfyUI
 pip install -r requirements.txt
 
 echo "===== 3. Install ComfyUI-Manager ====="
