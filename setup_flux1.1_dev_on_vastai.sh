@@ -21,7 +21,7 @@ if [ -d ComfyUI ]; then
   echo "ComfyUI already exists – removing for clean install"
   rm -rf ComfyUI
 fi
-git clone https://github.com/comfyanonymous/ComfyUI.git
+git clone https://github.com/comfyanonymous/ComfyUI.git /root/ComfyUI
 cd ComfyUI
 pip install -r requirements.txt
 
