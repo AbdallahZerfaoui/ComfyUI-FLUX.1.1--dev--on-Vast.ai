@@ -6,7 +6,7 @@
 # ------------------------------------------------------------------
 
 set -e
-COMFY_DIR="/ComfyUI"          # same folder used in setup script
+COMFY_DIR="/root/ComfyUI"          # same folder used in setup script
 PORT=8188                     # port ComfyUI will listen on
 
 echo ">>> Starting ComfyUI on 0.0.0.0:$PORT …"
