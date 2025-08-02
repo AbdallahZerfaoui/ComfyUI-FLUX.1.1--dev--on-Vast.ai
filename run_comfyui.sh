@@ -11,4 +11,4 @@ PORT=8188                     # port ComfyUI will listen on
 
 echo ">>> Starting ComfyUI on 0.0.0.0:$PORT …"
 cd "$COMFY_DIR"
-exec python main.py --listen --port "$PORT"
+exec python main.py --listen 0.0.0.0 --port "$PORT"
