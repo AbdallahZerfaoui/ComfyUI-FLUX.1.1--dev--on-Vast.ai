@@ -6,8 +6,8 @@
 # ------------------------------------------------------------------
 
 set -e
-COMFY_DIR="/root/ComfyUI"          # same folder used in setup script
-PORT=8188                     # port ComfyUI will listen on
+COMFY_DIR="/workspace/ComfyUI"          # same folder used in setup script
+PORT=8288                     # port ComfyUI will listen on
 
 echo ">>> Starting ComfyUI on 0.0.0.0:$PORT …"
 cd "$COMFY_DIR"
